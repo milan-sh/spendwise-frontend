@@ -1,4 +1,4 @@
-import { Logo, ListItem } from "../components/";
+import { Logo, ListItem, Datepicker, WalletCard } from "../components/";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import wallet from "../assets/svg/wallet.svg";
 import dashbaord from "../assets/svg/dashboard.svg";
@@ -56,7 +56,36 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="dashbaord col-span-3"></div>
+      <div className="dashbaord col-span-3 p-6">
+        <div className="w-full inline-flex justify-end">
+          <Datepicker />
+        </div>
+        <h4 className="text-2xl font-medium">Summary</h4>
+        <p className="text-gray-200">1 Jan,2025 - 28 Jan,2025</p>
+        <div className="py-6 grid grid-cols-4 gap-x-4">
+          <WalletCard
+          balance={10000}
+          title='Balance'
+          />
+          <WalletCard
+          balance={10000}
+          title='Income'
+          percent={12}
+          />
+          <WalletCard
+          balance={10000}
+          title='Expenses'
+          percent={12}
+          inProfit={false}
+          />
+          <WalletCard
+          balance={10000}
+          title='Savings'
+          percent={12}
+          inProfit={false}
+          />
+        </div>
+      </div>
     </div>
   );
 };
